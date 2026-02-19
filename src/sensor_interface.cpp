@@ -46,6 +46,7 @@ void quaternionToEuler(float qr, float qi, float qj, float qk, euler_t* ypr, boo
 
     if (degrees) {
       ypr->yaw *= RAD_TO_DEG;
+      if (ypr->yaw <0) ypr->yaw +=360.0; //mapping negative values
       ypr->pitch *= RAD_TO_DEG;
       ypr->roll *= RAD_TO_DEG;
     }
